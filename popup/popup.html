@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitBuddy Popup</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #000000;
-      --bg-card: #000000;
-      --border-card: #333333;
-      --text-main: #ffffff;
-      --text-muted: #888888;
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --border-card: #30363d;
+      --text-main: #c9d1d9;
+      --text-muted: #8b949e;
       --primary: #ffffff;
-      --primary-hover: #e5e7eb;
+      --primary-hover: #f3f4f6;
       --success: #ffffff;
-      --error: #888888;
+      --error: #8b949e;
     }
 
     * {
@@ -29,7 +27,7 @@
     body {
       background-color: var(--bg-dark);
       width: 320px;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       color: var(--text-main);
       padding: 1.2rem;
       border: 1px solid var(--border-card);
@@ -50,9 +48,10 @@
     }
 
     .logo {
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.25rem;
+      font-weight: 800;
       color: #ffffff;
+      letter-spacing: -0.5px;
     }
 
     .status-indicator {
@@ -76,13 +75,13 @@
     }
 
     .profile-card {
-      background: #000000;
-      border: none;
-      border-radius: 0;
-      padding: 0;
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .profile-item {
@@ -105,7 +104,7 @@
       border-radius: 4px;
       font-size: 0.75rem;
       font-weight: 600;
-      background: #000000;
+      background: rgba(255, 255, 255, 0.04);
       color: #ffffff;
       border: 1px solid var(--border-card);
     }
@@ -115,12 +114,12 @@
     }
 
     .badge.advanced {
-      border-color: #ffffff;
+      border-color: #8b949e;
     }
 
     .tech-list {
-      font-size: 0.85rem;
-      color: var(--text-main);
+      font-size: 0.8rem;
+      color: var(--text-muted);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -133,7 +132,7 @@
       color: var(--text-muted);
       line-height: 1.4;
       border: 1px dashed var(--border-card);
-      border-radius: 0;
+      border-radius: 6px;
       padding: 0.6rem;
       text-align: center;
     }
@@ -160,6 +159,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -182,7 +182,7 @@
     </div>
 
     <div class="instruction">
-      Visit any GitHub repository, and click the compass button on the screen to view your personalized walkthrough.
+      Visit any GitHub repository, and click the icon on the screen to view your personalized walkthrough.
     </div>
 
     <button type="button" class="btn" id="btnOptions">
@@ -192,4 +192,5 @@
 
   <script src="popup.js"></script>
 </body>
+
 </html>

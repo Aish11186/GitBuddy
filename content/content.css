@@ -1,16 +1,16 @@
 /* Reset container styles to avoid page conflicts */
-#gitbuddy-fab, #gitbuddy-sidebar {
+#myRepoMate-fab, #myRepoMate-sidebar {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   z-index: 999999 !important; /* Always on top */
 }
 
-#gitbuddy-fab *, #gitbuddy-sidebar * {
+#myRepoMate-fab *, #myRepoMate-sidebar * {
   box-sizing: border-box;
 }
 
 /* Floating Action Button (FAB) */
-#gitbuddy-fab {
+#myRepoMate-fab {
   position: fixed;
   bottom: 24px;
   right: 24px;
@@ -27,25 +27,25 @@
   border: 1px solid #ffffff;
 }
 
-#gitbuddy-fab:hover {
+#myRepoMate-fab:hover {
   background-color: #ffffff;
 }
 
-#gitbuddy-fab:hover span {
+#myRepoMate-fab:hover span {
   color: #000000 !important;
 }
 
-#gitbuddy-fab.active {
+#myRepoMate-fab.active {
   background-color: #000000;
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-#gitbuddy-fab span {
+#myRepoMate-fab span {
   transition: all 0.2s ease;
 }
 
 /* Sidebar Container */
-#gitbuddy-sidebar {
+#myRepoMate-sidebar {
   position: fixed;
   top: 0;
   right: 0;
@@ -60,12 +60,12 @@
   flex-direction: column;
 }
 
-#gitbuddy-sidebar.open {
+#myRepoMate-sidebar.open {
   transform: translateX(0);
 }
 
 /* Sidebar Header */
-.gitbuddy-header {
+.myRepoMate-header {
   padding: 1.25rem;
   border-bottom: 1px solid #333333;
   display: flex;
@@ -74,21 +74,21 @@
   background-color: #000000;
 }
 
-.gitbuddy-title {
+.myRepoMate-title {
   font-size: 1.15rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.3px;
 }
 
-.gitbuddy-subtitle {
+.myRepoMate-subtitle {
   font-size: 0.75rem;
   color: #888888;
   margin-top: 0.15rem;
   font-weight: 500;
 }
 
-.gitbuddy-close {
+.myRepoMate-close {
   background: none;
   border: none;
   color: #888888;
@@ -99,18 +99,18 @@
   transition: color 0.1s ease;
 }
 
-.gitbuddy-close:hover {
+.myRepoMate-close:hover {
   color: #ffffff;
 }
 
 /* Tabs */
-.gitbuddy-tabs {
+.myRepoMate-tabs {
   display: flex;
   border-bottom: 1px solid #333333;
   background-color: #000000;
 }
 
-.gitbuddy-tab {
+.myRepoMate-tab {
   flex: 1;
   padding: 0.85rem 0;
   text-align: center;
@@ -122,17 +122,17 @@
   border-bottom: 2px solid transparent;
 }
 
-.gitbuddy-tab:hover {
+.myRepoMate-tab:hover {
   color: #ffffff;
 }
 
-.gitbuddy-tab.active {
+.myRepoMate-tab.active {
   color: #ffffff;
   border-bottom-color: #ffffff;
 }
 
 /* Content Area */
-.gitbuddy-content-area {
+.myRepoMate-content-area {
   flex: 1;
   overflow-y: auto;
   padding: 1.25rem;
@@ -142,25 +142,25 @@
 }
 
 /* Custom Scrollbar */
-.gitbuddy-content-area::-webkit-scrollbar {
+.myRepoMate-content-area::-webkit-scrollbar {
   width: 5px;
 }
 
-.gitbuddy-content-area::-webkit-scrollbar-track {
+.myRepoMate-content-area::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.gitbuddy-content-area::-webkit-scrollbar-thumb {
+.myRepoMate-content-area::-webkit-scrollbar-thumb {
   background: #333333;
   border-radius: 3px;
 }
 
-.gitbuddy-content-area::-webkit-scrollbar-thumb:hover {
+.myRepoMate-content-area::-webkit-scrollbar-thumb:hover {
   background: #888888;
 }
 
 /* Loading Spinner */
-.gitbuddy-loading-container {
+.myRepoMate-loading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,7 +169,7 @@
   gap: 0.75rem;
 }
 
-.gitbuddy-spinner {
+.myRepoMate-spinner {
   width: 30px;
   height: 30px;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -178,7 +178,7 @@
   animation: spin 0.8s linear infinite;
 }
 
-.gitbuddy-loading-text {
+.myRepoMate-loading-text {
   color: #888888;
   font-size: 0.85rem;
   font-weight: 500;
@@ -189,19 +189,19 @@
 }
 
 /* Markdown Rendering */
-.gitbuddy-markdown-rendered {
+.myRepoMate-markdown-rendered {
   color: #ffffff;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
-.gitbuddy-markdown-rendered br {
+.myRepoMate-markdown-rendered br {
   content: "";
   display: block;
   margin-bottom: 0.75rem;
 }
 
-.gitbuddy-h3 {
+.myRepoMate-h3 {
   font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
@@ -211,17 +211,17 @@
   padding-bottom: 0.2rem;
 }
 
-.gitbuddy-markdown-rendered ul, .gitbuddy-markdown-rendered ol {
+.myRepoMate-markdown-rendered ul, .myRepoMate-markdown-rendered ol {
   margin-bottom: 0.75rem;
   padding-left: 1.2rem;
 }
 
-.gitbuddy-li, .gitbuddy-ol-li {
+.myRepoMate-li, .myRepoMate-ol-li {
   margin-bottom: 0.3rem;
 }
 
 /* Code Blocks */
-.gitbuddy-code-wrapper {
+.myRepoMate-code-wrapper {
   background-color: #000000;
   border: 1px solid #333333;
   border-radius: 0;
@@ -229,7 +229,7 @@
   overflow: hidden;
 }
 
-.gitbuddy-code-header {
+.myRepoMate-code-header {
   background-color: #000000;
   padding: 0.35rem 0.75rem;
   font-size: 0.7rem;
@@ -240,19 +240,19 @@
   letter-spacing: 0.5px;
 }
 
-.gitbuddy-code-wrapper pre {
+.myRepoMate-code-wrapper pre {
   margin: 0;
   padding: 0.75rem;
   overflow-x: auto;
 }
 
-.gitbuddy-code-wrapper code {
+.myRepoMate-code-wrapper code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 0.8rem;
   color: #ffffff;
 }
 
-.gitbuddy-inline-code {
+.myRepoMate-inline-code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 0.8rem;
   background-color: #000000;
@@ -263,7 +263,7 @@
 }
 
 /* Error States */
-.gitbuddy-error-container {
+.myRepoMate-error-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -274,20 +274,20 @@
   border-radius: 0;
 }
 
-.gitbuddy-error-title {
+.myRepoMate-error-title {
   font-weight: 700;
   color: #ffffff;
   font-size: 1rem;
   margin-bottom: 0.4rem;
 }
 
-.gitbuddy-error-desc {
+.myRepoMate-error-desc {
   color: #888888;
   font-size: 0.8rem;
   line-height: 1.4;
 }
 
-.gitbuddy-error-btn {
+.myRepoMate-error-btn {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;
@@ -300,12 +300,12 @@
   margin-top: 0.75rem;
 }
 
-.gitbuddy-error-btn:hover {
+.myRepoMate-error-btn:hover {
   background-color: #e5e7eb;
 }
 
 /* CTA Welcome Panel */
-.gitbuddy-welcome-ai {
+.myRepoMate-welcome-ai {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,16 +315,16 @@
   padding: 1.5rem 1rem;
 }
 
-.gitbuddy-welcome-ai h3 {
+.myRepoMate-welcome-ai h3 {
   color: #ffffff;
 }
 
-.gitbuddy-welcome-ai p {
+.myRepoMate-welcome-ai p {
   color: #888888;
 }
 
 /* AI Action Button */
-.gitbuddy-ai-btn {
+.myRepoMate-ai-btn {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #ffffff;
@@ -337,15 +337,15 @@
   width: 100%;
 }
 
-.gitbuddy-ai-btn:hover {
+.myRepoMate-ai-btn:hover {
   background-color: #e5e7eb;
 }
 
-.gitbuddy-ai-btn:active {
+.myRepoMate-ai-btn:active {
   transform: translateY(0);
 }
 
-.gitbuddy-ai-prompt-box {
+.myRepoMate-ai-prompt-box {
   background-color: #000000;
   border: 1px solid #333333;
   border-radius: 0;
@@ -354,18 +354,18 @@
   text-align: center;
 }
 
-.gitbuddy-ai-prompt-box.success {
+.myRepoMate-ai-prompt-box.success {
   border-color: #333333;
 }
 
-.gitbuddy-ai-prompt-box h4 {
+.myRepoMate-ai-prompt-box h4 {
   font-size: 0.95rem;
   font-weight: 700;
   margin: 0 0 0.35rem 0;
   color: #ffffff;
 }
 
-.gitbuddy-ai-prompt-box p {
+.myRepoMate-ai-prompt-box p {
   font-size: 0.75rem;
   color: #888888;
   line-height: 1.4;
@@ -378,7 +378,7 @@
 }
 
 /* Match Badge & Tech Tags styling */
-.gitbuddy-match-badge {
+.myRepoMate-match-badge {
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -386,25 +386,25 @@
   border: 1px solid #333333;
 }
 
-.gitbuddy-match-badge.low-match {
+.myRepoMate-match-badge.low-match {
   background-color: #000000;
   color: #888888;
   border-color: #333333;
 }
 
-.gitbuddy-match-badge.mid-match {
+.myRepoMate-match-badge.mid-match {
   background-color: #000000;
   color: #ffffff;
   border-color: #888888;
 }
 
-.gitbuddy-match-badge.high-match {
+.myRepoMate-match-badge.high-match {
   background-color: #ffffff;
   color: #000000;
   border-color: #ffffff;
 }
 
-.gitbuddy-tech-tag {
+.myRepoMate-tech-tag {
   background-color: #000000;
   border: 1px solid #333333;
   color: #ffffff;
@@ -416,13 +416,13 @@
   margin-bottom: 0.25rem;
 }
 
-.gitbuddy-tech-tag.match {
+.myRepoMate-tech-tag.match {
   background-color: #ffffff;
   border-color: #ffffff;
   color: #000000;
 }
 
-.gitbuddy-tech-tag.opp {
+.myRepoMate-tech-tag.opp {
   background-color: #000000;
   border-color: #333333;
   color: #888888;

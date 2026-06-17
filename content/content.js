@@ -1,7 +1,7 @@
 (function () {
   // Prevent duplicate injection
-  if (window.hasGitBuddyInjected) return;
-  window.hasGitBuddyInjected = true;
+  if (window.hasmyRepoMateInjected) return;
+  window.hasmyRepoMateInjected = true;
 
   // Configuration & State
   let sidebarEl = null;
@@ -190,33 +190,33 @@
 
   // 4. Initialize floating button and sidebar DOM
   function initUI() {
-    if (document.getElementById('gitbuddy-fab')) return;
+    if (document.getElementById('myRepoMate-fab')) return;
 
     // Create FAB
     toggleBtnEl = document.createElement('div');
-    toggleBtnEl.id = 'gitbuddy-fab';
+    toggleBtnEl.id = 'myRepoMate-fab';
     toggleBtnEl.innerHTML = `
-      <span style="font-weight: 800; font-size: 1.15rem; color: #ffffff;">GB</span>
+      <span style="font-weight: 800; font-size: 1.15rem; color: #ffffff;">RM</span>
     `;
-    toggleBtnEl.title = "GitBuddy Onboarding Tour";
+    toggleBtnEl.title = "myRepoMate Onboarding Tour";
     document.body.appendChild(toggleBtnEl);
 
     // Create Sidebar container
     sidebarEl = document.createElement('div');
-    sidebarEl.id = 'gitbuddy-sidebar';
+    sidebarEl.id = 'myRepoMate-sidebar';
     sidebarEl.innerHTML = `
-      <div class="gitbuddy-header">
+      <div class="myRepoMate-header">
         <div>
-          <div class="gitbuddy-title">GitBuddy Onboarding</div>
-          <div class="gitbuddy-subtitle" id="gitbuddy-user-profile">Loading profile...</div>
+          <div class="myRepoMate-title">myRepoMate Onboarding</div>
+          <div class="myRepoMate-subtitle" id="myRepoMate-user-profile">Loading profile...</div>
         </div>
-        <button class="gitbuddy-close" id="gitbuddy-close-btn">&times;</button>
+        <button class="myRepoMate-close" id="myRepoMate-close-btn">&times;</button>
       </div>
-      <div class="gitbuddy-tabs">
-        <div class="gitbuddy-tab active" data-tab="match">Match</div>
-        <div class="gitbuddy-tab" data-tab="walkthrough">Tour</div>
+      <div class="myRepoMate-tabs">
+        <div class="myRepoMate-tab active" data-tab="match">Match</div>
+        <div class="myRepoMate-tab" data-tab="walkthrough">Tour</div>
       </div>
-      <div class="gitbuddy-content-area" id="gitbuddy-content">
+      <div class="myRepoMate-content-area" id="myRepoMate-content">
         <!-- Rendered tabs inside -->
       </div>
     `;
@@ -224,9 +224,9 @@
 
     // Events
     toggleBtnEl.addEventListener('click', togglePanel);
-    document.getElementById('gitbuddy-close-btn').addEventListener('click', closePanel);
+    document.getElementById('myRepoMate-close-btn').addEventListener('click', closePanel);
 
-    const tabs = sidebarEl.querySelectorAll('.gitbuddy-tab');
+    const tabs = sidebarEl.querySelectorAll('.myRepoMate-tab');
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -259,7 +259,7 @@
         learnTech: profile.learnTech || ""
       };
 
-      document.getElementById('gitbuddy-user-profile').textContent = `Personalized for ${userProfile.skillLevel}`;
+      document.getElementById('myRepoMate-user-profile').textContent = `Personalized for ${userProfile.skillLevel}`;
       renderTabContent();
     });
   }
@@ -272,15 +272,15 @@
 
   // 6. Main Render Selector
   function renderTabContent() {
-    const contentArea = document.getElementById('gitbuddy-content');
+    const contentArea = document.getElementById('myRepoMate-content');
     if (!contentArea) return;
 
     const repoInfo = scrapeRepoDetails();
     if (!repoInfo) {
       contentArea.innerHTML = `
-        <div class="gitbuddy-error-container">
-          <div class="gitbuddy-error-title">Error loading codebase</div>
-          <div class="gitbuddy-error-desc">Could not parse repository details. Please ensure you are on a GitHub repository homepage.</div>
+        <div class="myRepoMate-error-container">
+          <div class="myRepoMate-error-title">Error loading codebase</div>
+          <div class="myRepoMate-error-desc">Could not parse repository details. Please ensure you are on a GitHub repository homepage.</div>
         </div>
       `;
       return;
@@ -297,9 +297,9 @@
           <div style="text-align: center; margin-bottom: 1.5rem; animation: fadeIn 0.3s ease;">
             <div style="font-size: 2.25rem; font-weight: 800; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">${matchData.matchScore}%</div>
             <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; margin-top: 0.2rem;">Compatibility Score</div>
-            <div class="gitbuddy-match-badge ${matchData.statusClass}" style="margin: 0.5rem auto 0 auto; display: inline-block;">${matchData.statusText}</div>
+            <div class="myRepoMate-match-badge ${matchData.statusClass}" style="margin: 0.5rem auto 0 auto; display: inline-block;">${matchData.statusText}</div>
             <div style="margin-top: 0.75rem;">
-              <button class="gitbuddy-error-btn" id="gitbuddy-setup-tech-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Configure Settings</button>
+              <button class="myRepoMate-error-btn" id="myRepoMate-setup-tech-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Configure Settings</button>
             </div>
           </div>
         `;
@@ -311,33 +311,33 @@
             <div style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; margin-top: 0.75rem;">
               Configure your comfortable technologies in the dashboard to see your compatibility score!
             </div>
-            <button class="gitbuddy-error-btn" id="gitbuddy-setup-tech-btn" style="margin-top: 0.5rem; padding: 0.35rem 0.75rem; font-size: 0.75rem;">Open Dashboard</button>
+            <button class="myRepoMate-error-btn" id="myRepoMate-setup-tech-btn" style="margin-top: 0.5rem; padding: 0.35rem 0.75rem; font-size: 0.75rem;">Open Dashboard</button>
           </div>
         `;
       }
 
       let matchContent = `
         ${scoreDisplay}
-        <h3 class="gitbuddy-h3">Scraped Tech Stack</h3>
+        <h3 class="myRepoMate-h3">Scraped Tech Stack</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-          ${matchData.detectedTech.map(t => `<span class="gitbuddy-tech-tag">${t}</span>`).join('') || '<span style="color: #8b949e; font-size: 0.8rem;">None detected in local files</span>'}
+          ${matchData.detectedTech.map(t => `<span class="myRepoMate-tech-tag">${t}</span>`).join('') || '<span style="color: #8b949e; font-size: 0.8rem;">None detected in local files</span>'}
         </div>
       `;
 
       if (hasConfiguredTech && matchData.matches.length > 0) {
         matchContent += `
-          <h3 class="gitbuddy-h3" style="color: #ffffff;">Your Skills Used Here</h3>
+          <h3 class="myRepoMate-h3" style="color: #ffffff;">Your Skills Used Here</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            ${matchData.matches.map(t => `<span class="gitbuddy-tech-tag match">${t}</span>`).join('')}
+            ${matchData.matches.map(t => `<span class="myRepoMate-tech-tag match">${t}</span>`).join('')}
           </div>
         `;
       }
 
       if (hasConfiguredTech && matchData.learningOpps.length > 0) {
         matchContent += `
-          <h3 class="gitbuddy-h3" style="color: #8b949e;">Learning Opportunities</h3>
+          <h3 class="myRepoMate-h3" style="color: #8b949e;">Learning Opportunities</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-            ${matchData.learningOpps.map(t => `<span class="gitbuddy-tech-tag opp">${t}</span>`).join('')}
+            ${matchData.learningOpps.map(t => `<span class="myRepoMate-tech-tag opp">${t}</span>`).join('')}
           </div>
         `;
       }
@@ -345,37 +345,37 @@
       if (aiAnalysisCache && aiAnalysisCache.match) {
         matchContent += `
           <div style="margin-top: 1.5rem; border-top: 1px solid #30363d; padding-top: 1rem;">
-            <div class="gitbuddy-markdown-rendered">
+            <div class="myRepoMate-markdown-rendered">
               ${parseMarkdownToHTML(aiAnalysisCache.match)}
             </div>
           </div>
         `;
       } else if (isGenerating) {
         matchContent += `
-          <div class="gitbuddy-loading-container" style="margin-top: 1.5rem; border-top: 1px dashed #30363d; padding-top: 1.5rem;">
-            <div class="gitbuddy-spinner"></div>
-            <div class="gitbuddy-loading-text">Consulting Gemini AI...</div>
+          <div class="myRepoMate-loading-container" style="margin-top: 1.5rem; border-top: 1px dashed #30363d; padding-top: 1.5rem;">
+            <div class="myRepoMate-spinner"></div>
+            <div class="myRepoMate-loading-text">Consulting Gemini AI...</div>
           </div>
         `;
       } else {
         matchContent += `
           <div style="margin-top: 2rem; border-top: 1px dashed #30363d; padding-top: 1.25rem; text-align: center;">
             <div style="font-size: 0.75rem; color: #8b949e; margin-bottom: 0.5rem;">Want personalized AI learning advice for this stack?</div>
-            <button class="gitbuddy-error-btn" id="gitbuddy-match-trigger-tour-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Generate AI Tour & Learning Guide</button>
+            <button class="myRepoMate-error-btn" id="myRepoMate-match-trigger-tour-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Generate AI Tour & Learning Guide</button>
           </div>
         `;
       }
 
       contentArea.innerHTML = matchContent;
 
-      const setupBtn = document.getElementById('gitbuddy-setup-tech-btn');
+      const setupBtn = document.getElementById('myRepoMate-setup-tech-btn');
       if (setupBtn) {
         setupBtn.addEventListener('click', () => {
           chrome.runtime.sendMessage({ action: "openOptionsPage" });
         });
       }
 
-      const matchTourBtn = document.getElementById('gitbuddy-match-trigger-tour-btn');
+      const matchTourBtn = document.getElementById('myRepoMate-match-trigger-tour-btn');
       if (matchTourBtn) {
         matchTourBtn.addEventListener('click', () => {
           triggerAnalysis();
@@ -388,9 +388,9 @@
     if (currentTab === 'walkthrough') {
       if (isGenerating) {
         contentArea.innerHTML = `
-          <div class="gitbuddy-loading-container">
-            <div class="gitbuddy-spinner"></div>
-            <div class="gitbuddy-loading-text">Preparing... (This may take upto 30 seconds)</div>
+          <div class="myRepoMate-loading-container">
+            <div class="myRepoMate-spinner"></div>
+            <div class="myRepoMate-loading-text">Preparing... (This may take upto 30 seconds)</div>
             <div style="font-size: 0.75rem; color: #8b949e; text-align: center; max-width: 280px; margin-top: -0.5rem;">Analyzing file structures and configuration formats. This will take up to 10 seconds.</div>
           </div>
         `;
@@ -399,12 +399,12 @@
 
       if (!aiAnalysisCache || !aiAnalysisCache.walkthrough) {
         contentArea.innerHTML = `
-          <div class="gitbuddy-welcome-ai">
+          <div class="myRepoMate-welcome-ai">
             <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff;">Generate Codebase Walkthrough</h3>
             <p style="font-size: 0.8rem; color: #8b949e; line-height: 1.5; margin-bottom: 1.5rem; max-width: 285px; margin-left: auto; margin-right: auto;">
               Send repository files and README summary to the API to construct a personalized codebase map and setup guide.
             </p>
-            <button class="gitbuddy-ai-btn" id="btn-trigger-ai-tab">Generate AI Onboarding Tour</button>
+            <button class="myRepoMate-ai-btn" id="btn-trigger-ai-tab">Generate AI Onboarding Tour</button>
           </div>
         `;
 
@@ -416,7 +416,7 @@
       }
 
       contentArea.innerHTML = `
-        <div class="gitbuddy-markdown-rendered">
+        <div class="myRepoMate-markdown-rendered">
           ${parseMarkdownToHTML(aiAnalysisCache.walkthrough)}
         </div>
       `;
@@ -487,23 +487,23 @@
     // Code blocks with copy button
     html = html.replace(/```([\w-]*)\n([\s\S]*?)```/g, (match, lang, code) => {
       return `
-        <div class="gitbuddy-code-wrapper">
-          <div class="gitbuddy-code-header">${lang || 'code'}</div>
+        <div class="myRepoMate-code-wrapper">
+          <div class="myRepoMate-code-header">${lang || 'code'}</div>
           <pre><code>${code.trim()}</code></pre>
         </div>
       `;
     });
 
-    html = html.replace(/`([^`]+)`/g, '<code class="gitbuddy-inline-code">$1</code>');
+    html = html.replace(/`([^`]+)`/g, '<code class="myRepoMate-inline-code">$1</code>');
     html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    html = html.replace(/^##\s+(.+)$/gm, '<h3 class="gitbuddy-h3" style="color: #ffffff; border-bottom-color: rgba(255, 255, 255, 0.15);">$1</h3>');
-    html = html.replace(/^###\s+(.+)$/gm, '<h4 class="gitbuddy-h4" style="color: #ffffff; margin-top: 1rem; margin-bottom: 0.25rem;">$1</h4>');
+    html = html.replace(/^##\s+(.+)$/gm, '<h3 class="myRepoMate-h3" style="color: #ffffff; border-bottom-color: rgba(255, 255, 255, 0.15);">$1</h3>');
+    html = html.replace(/^###\s+(.+)$/gm, '<h4 class="myRepoMate-h4" style="color: #ffffff; margin-top: 1rem; margin-bottom: 0.25rem;">$1</h4>');
 
-    html = html.replace(/^\s*[-*]\s+(.+)$/gm, '<li class="gitbuddy-li">$1</li>');
-    html = html.replace(/(<li class="gitbuddy-li">.*<\/li>\n?)+/g, (match) => `<ul>${match}</ul>`);
+    html = html.replace(/^\s*[-*]\s+(.+)$/gm, '<li class="myRepoMate-li">$1</li>');
+    html = html.replace(/(<li class="myRepoMate-li">.*<\/li>\n?)+/g, (match) => `<ul>${match}</ul>`);
 
-    html = html.replace(/^\s*\d+\.\s+(.+)$/gm, '<li class="gitbuddy-ol-li">$1</li>');
-    html = html.replace(/(<li class="gitbuddy-ol-li">.*<\/li>\n?)+/g, (match) => `<ol>${match}</ol>`);
+    html = html.replace(/^\s*\d+\.\s+(.+)$/gm, '<li class="myRepoMate-ol-li">$1</li>');
+    html = html.replace(/(<li class="myRepoMate-ol-li">.*<\/li>\n?)+/g, (match) => `<ol>${match}</ol>`);
 
     html = html.replace(/\n\n/g, '<br/>');
 
@@ -511,23 +511,23 @@
   }
 
   function showError(message) {
-    const contentArea = document.getElementById('gitbuddy-content');
+    const contentArea = document.getElementById('myRepoMate-content');
     if (!contentArea) return;
 
     let advice = "";
     if (message.includes("API Key") || message.includes("credentials")) {
-      advice = `<br/><br/><button class="gitbuddy-error-btn" id="gitbuddy-err-setup">Configure Settings</button>`;
+      advice = `<br/><br/><button class="myRepoMate-error-btn" id="myRepoMate-err-setup">Configure Settings</button>`;
     }
 
     contentArea.innerHTML = `
-      <div class="gitbuddy-error-container">
-        <div class="gitbuddy-error-title">Error Analyzing Codebase</div>
-        <div class="gitbuddy-error-desc">${message}</div>
+      <div class="myRepoMate-error-container">
+        <div class="myRepoMate-error-title">Error Analyzing Codebase</div>
+        <div class="myRepoMate-error-desc">${message}</div>
         ${advice}
       </div>
     `;
 
-    const errBtn = document.getElementById('gitbuddy-err-setup');
+    const errBtn = document.getElementById('myRepoMate-err-setup');
     if (errBtn) {
       errBtn.addEventListener('click', () => {
         chrome.runtime.sendMessage({ action: "openOptionsPage" });
@@ -551,7 +551,7 @@
           currentTab = 'match'; // Reset tab to Match
 
           if (sidebarEl) {
-            const tabs = sidebarEl.querySelectorAll('.gitbuddy-tab');
+            const tabs = sidebarEl.querySelectorAll('.myRepoMate-tab');
             tabs.forEach(t => {
               t.classList.remove('active');
               if (t.getAttribute('data-tab') === 'match') t.classList.add('active');

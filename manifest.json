@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GitBuddy - Personalized GitHub Onboarding",
+  "name": "myRepoMate - Personalized GitHub Onboarding",
   "version": "1.0",
   "description": "Provides personalized codebase tours and setup guides when visiting GitHub repositories, tailored to your skill level.",
   "permissions": [
