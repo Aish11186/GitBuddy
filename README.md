@@ -1,7 +1,7 @@
-myRepoMate is your personalised repo onboarding and contribution guideline tool. 
-Designed to help beginners break into open source. 
-Please refer to requirements.txt.
-Clone the repo to run locally
+myRepoMate is your personalised repo onboarding and contribution guideline tool. <br>
+Designed to help beginners break into open source. <br>
+Please refer to requirements.txt. <br>
+Clone the repo to run locally <br>
 
 
 
